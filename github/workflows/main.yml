@@ -2,13 +2,14 @@ name : Automated-selenium-web-scraping-for-auction-plan
 
 on:
     push:
-        branches:  [ main ]
+        branches:  
+          - main
 jobs:
     scrapper:
         runs-on: ubuntu-latest
         steps:
             - name: Cloning Repo
-              uses: actions/checkouy@v3
+              uses: actions/checkout@v3
             - name: Installing python
               uses: actions/setup-python@v4
               with:
@@ -26,4 +27,3 @@ jobs:
 
             - name: Run python code
               run: python main.py
-              
